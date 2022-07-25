@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enjoyer-Music and Audio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <header class="navheader">
+            <h1>Enjoyer</h1>
+        </header>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <input type="checkbox" name="" id="">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="description">
+            <header class="hero-header">
+                <h2>Turn music into your best friends</h2>
+            </header>
+            <p>
+                Music is the part of our lifes. You can hear the music while working, workout,
+                or relaxing. We're here to provide you with high-quality musics and videos. Increase
+                your productivity with our musics.
+            </p>
+            <button type="button">Open Library</button>
+        </div>
+        <div class="hero-image">
+            <picture>
+                <source media="(min-width: 600px)" srcset="img/hero-images2.jpg">
+                <source media="(min-width: 1280px)" srcset="img/hero-images1.jpg">
+                <img src="img/hero-images2.jpg" alt="hero images">
+            </picture>
+        </div>
+    </section>
+    <!-- Popular Search Section -->
+    <section class="popular">
+        <header class="popular-header">
+            <h2>Popular Search</h2>
+        </header>
+        <div class="popular-search">
+            <div class="popular-1">
+                <figure>
+                    <picture>
+                        <img src="img/images1.jpg" alt="audio poster 1">
+                    </picture>
+                    <figcaption>
+                        Never Surrender - Anno Domini Beats
+                    </figcaption>
+                    <audio controls>
+                        <source src="audio/Never Surrender - Anno Domini Beats.mp3" type="audio/mp3">
+                        Your browser doesn't support <code>audio</code>
+                    </audio>
+                </figure>
+            </div>
+            <div class="popular-2">
+                <figure>
+                    <picture>
+                        <img src="img/images2.jpg" alt="audio poster 2">
+                    </picture>
+                    <figcaption>
+                        Happy Tropical House Music
+                    </figcaption>
+                    <audio controls>
+                        <source src="audio/Happy Tropical House Music (No Copyright).mp3" type="audio/mp3">
+                        Your browser doesn't support <code>audio</code>
+                    </audio>
+                </figure>
+            </div>
+            <div class="popular-3">
+                <figure>
+                    <picture>
+                        <img src="img/images3.jpg" alt="audio poster 3">
+                    </picture>
+                    <figcaption>
+                        NEFFEX-Gratefull
+                    </figcaption>
+                    <audio controls>
+                        <source src="audio/NEFFEX - Grateful  Copyright Free .mp3" type="audio/mp3">
+                        Your browser doesn't support <code>audio</code>
+                    </audio>
+                </figure>
+            </div>
+        </div>        
+    </section>
+    <!-- Video Section -->
+    <section class="video-player">
+        <header class="video-header">
+            <h2>Video Player</h2>
+        </header>
+        <div class="video-container">
+            <div class="video-plays">
+                <figure>
+                    <video controls>
+                        <source src="video/Woman - 58142.mp4" type="video/mp4">
+                        Your browser doesn't support <code>video</code>
+                    </video>
+                </figure>
+            </div>
+            <div class="video-description">
+                <h3>Beautiful Flower in a Springs</h3>
+                <p>
+                    There was a woman who play by the flowers and she enjoy it. She feels Happy
+                    for what she does in the garden. But suddenly she run so far and never to be
+                    seen again.
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Copyright &copy; Enjoyer-Audio and Videos 2022</p> 
+    </footer>
+</body>
+<script>
+    const menuToggle = document.querySelector('.menu-icon input');
+    const nav = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', function(){
+        nav.classList.toggle('slide');
+    });
+</script>
+</html>

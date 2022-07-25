@@ -1,0 +1,410 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Smartphone Display */
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(239, 171, 60);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+}
+
+nav .navheader h1{
+    font-size: 2rem;
+    color: rgb(33, 23, 7); 
+}
+
+nav ul{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(239, 171, 60);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all .5s;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(33, 23, 7);
+    transition: .3s;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    color: rgb(147, 102, 36);
+    font-size: 2rem;
+}
+
+nav ul.slide{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Hamburger Menu */
+.menu-icon{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.menu-icon span{
+    background-color: rgb(33, 23, 7);
+    width: 28px;
+    height: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+    transition: all .3s;
+}
+
+.menu-icon input{
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 40px;
+    height: 30px;
+    z-index: 2;
+    opacity: 0;
+}
+
+/* Hamburger Menu Animation */
+.menu-icon span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-icon span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-icon input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-icon input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(0, -3px);
+}
+
+.menu-icon input:checked ~ span:nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* Hero Section CSS */
+.hero{
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+            "image"
+            "hero-description"
+    ;
+    overflow: hidden;
+    
+}
+
+.hero .hero-image{
+    grid-area: image;
+    margin-top: 40px;
+    
+}
+
+.hero .description{
+    grid-area: hero-description;
+    max-width: 370px;
+    margin-left: 50px;
+}
+
+.hero .description p{
+    margin-top: 10px;
+}
+
+.hero .description button{
+    border: none;
+    background-color: rgb(239, 171, 60);
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    width: 12em;
+    height: 3em;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.hero .description button:hover{
+    border: none;
+    background-color: rgb(203, 145, 52);
+    font-family: 'Poppins', sans-serif;
+    color: rgb(245, 245, 245);
+    font-size: 20px;
+    width: 12em;
+    height: 3em;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Popular Search Section CSS */
+.popular{
+    width: 80%;
+    margin: 30px auto;
+}
+
+.popular .popular-search{
+    margin-top: 20px;
+    margin-left: 50px;
+    display: grid;
+    grid-template-areas: 
+            "popular1"
+            "popular2"
+            "popular3";
+}
+
+.popular .popular-header h2{
+    text-align: center;
+}
+
+.popular .popular-search .popular-1{
+    grid-area: popular1;
+}
+
+.popular .popular-search .popular-2{
+    grid-area: popular2;
+    margin-top: 20px;
+}
+
+.popular .popular-search .popular-3{
+    grid-area: popular3;
+    margin-top: 20px;
+}
+
+.popular .popular-search .popular-1 figcaption, 
+.popular .popular-search .popular-2 figcaption, 
+.popular .popular-search .popular-3 figcaption {
+    text-align: center;   
+}
+
+.popular .popular-search .popular-1 img, 
+.popular .popular-search .popular-2 img, 
+.popular .popular-search .popular-3 img {
+    border-radius: 4px;
+}
+
+.popular .popular-search .popular-1 audio, 
+.popular .popular-search .popular-2 audio, 
+.popular .popular-search .popular-3 audio {
+    margin-top: 10px;
+}
+
+/* Video Player Section CSS*/
+.video-player{
+    width: 80%;
+    margin: 30px auto;
+}
+
+.video-player .video-header{
+    text-align: center;
+}
+
+.video-player .video-container{
+    display: grid;
+    grid-template-areas: 
+            "video"
+            "description"
+            ;
+}
+
+.video-player .video-container .video-plays{
+    grid-area: video;
+}
+
+.video-player .video-container .video-plays video{
+    max-width: 350px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.video-player .video-container .video-description{
+    grid-area: description;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+/* Footer CSS */
+footer{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(165, 120, 42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p{
+    color: rgb(243, 243, 243);
+}
+
+/* Tablet Display */
+@media screen and (min-width: 768px){
+    /* Hero Section CSS */
+    .hero{
+        grid-template-areas: 
+                "hero-description images"
+                ;
+        position: relative;
+        gap: 10px;
+    }
+
+    .hero .hero-image{
+        position: relative;
+        top: -280px;
+        right: 0;
+    }
+
+    .hero .description{
+        position: relative;
+        top: 200px;
+        right: 0;
+    }
+
+    /* Popular Search CSS */
+    .popular{
+        margin: -250px auto;
+    }
+
+    .popular .popular-search{
+        grid-template-areas: 
+                "popular1 popular2"
+                "popular1 popular2"
+                "popular3 popular3"
+                ;
+        gap: 10px;
+    }
+    
+    .popular .popular-search .popular-2{
+        margin-top: -3px;
+    }
+
+    .popular .popular-search .popular-1 figcaption, 
+    .popular .popular-search .popular-2 figcaption, 
+    .popular .popular-search .popular-3 figcaption {
+        text-align: left;   
+    }
+
+    /* Video Section CSS */
+    .video-player{
+        margin-top: 300px;
+    }
+
+    .video-player .video-container{
+        grid-template-areas: 
+                "video description";
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    /* h2 font-size CSS */
+    body h2{
+        font-size: 2rem;
+    }
+
+    /* Navigation CSS */
+    nav ul{
+        width: 40%;
+        height: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        opacity: 1;
+        transform: translateY(0);
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+    nav ul li{
+        background-color: none;
+    }
+
+    .menu-icon span, .menu-icon input{
+        display: none;
+    }
+
+    /* Hero Section CSS */
+    .hero .hero-image{
+        right: 0;
+    }
+
+    .hero .description{
+        position: relative;
+        right: -150px;
+    }
+
+    .hero .description .hero-header h2{
+        font-size: 2.5rem;
+    }
+
+    .hero .description p{
+        font-size: 1.1rem;
+    }
+
+    /* Popular Search Section CSS*/
+    .popular{
+        margin: -200px auto;
+    }
+
+    .popular .popular-search{
+        grid-template-areas: 
+                "popular1 popular2 popular3"
+                "popular1 popular2 popular3"
+                "popular1 popular2 popular3"
+                ;
+    }
+
+    .popular .popular-search .popular-3{
+        margin-top: -5px;    
+    }
+
+    /* Video CSS */
+    .video-player .video-container .video-plays video{
+        max-width: 500px;
+        margin-left: 80px;
+    }
+
+    .video-player .video-container .video-description h3{
+        font-size: 1.6rem;
+    }
+
+    .video-player .video-container .video-description p{
+        font-size: 1.2rem;
+    }
+
+}
+
+
+
+
+
+
+
+
